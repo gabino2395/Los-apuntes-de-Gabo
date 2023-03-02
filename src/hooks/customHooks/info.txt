@@ -1,0 +1,3 @@
+son funciones personalizadas que tienen dentro hooks comunes.
+Estas funciones sirven para abstraer la logica de un componente, limpiar el codigo y que quede mas elegante.
+Tambien para reutilizar esa logica en diferentes ambitos de la app.

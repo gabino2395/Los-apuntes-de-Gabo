@@ -1,0 +1,80 @@
+USEEFFECT:
+El hook useEffect permite agregar efectos secundarios a un componente funcional, como actualizar el DOM o realizar solicitudes HTTP.
+
+-Es muy util porque da respuestas a cambios de estado o en los props de un componente.
+-Es muy utilizado para el llamado de una API,
+-Limpia efectos secundarios cuando un componente se desmonta o se actualiza, para evitar errores o fugas de memoria.
+
+En resumen: te permite controlar y gestionar los efectos secundarios en tus componentes de manera fácil y eficiente, lo que es esencial para construir aplicaciones de alta calidad con React.
+
+
+Aqui como usarlo
+Recibe una callback con una funcion anonima, ahi iria el codigo a introducir como por ejemplo una funcion que llame a una api y por ultimo recibe una dependencia que es un array vacio. Si este no se escribe la funcion se ejecutara sin cesar, si se escribe una array vacio se ejecutara  1 sola vez y si escribe alguna variable dentro se volvera a ejecutar cuando el estado de la variable cambie.
+
+useEffect(()=>{
+fase de montaje 1 sola vez
+},[])
+useEffect(()=>{
+se montara cada vez que el parametro-variable-estado cambie
+},[parametro-variable-estado])
+
+useEffect(()=>{
+fase de actualizacion  se realiza cada vez que hay un cambio en la app
+},[])
+
+useEffect(()=>{
+  return()=>{
+fase de desmontaje 
+
+  }
+},[])
+
+1. What is a "side effect" in React? What are some examples?
+- Any code that affects an outside system.
+- local storage, API, websockets, two states to keep in sync
+
+
+2. What is NOT a "side effect" in React? Examples?
+- Anything that React is in charge of.
+- Maintaining state, keeping the UI in sync with the data, 
+  render DOM elements
+
+
+3. When does React run your useEffect function? When does it NOT run
+   the effect function?
+- As soon as the component loads (first render)
+- On every re-render of the component (assuming no dependencies array)
+- Will NOT run the effect when the values of the dependencies in the
+  array stay the same between renders
+
+
+4. How would you explain what the "dependecies array" is?
+- Second paramter to the useEffect function
+- A way for React to know whether it should re-run the effect function
+
+
+
+CLEAN UP FUNCTION import React from "react"
+
+export default function WindowTracker() {
+    
+    const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
+    
+    React.useEffect(() => {
+        function watchWidth() {
+            console.log("Setting up...")
+            setWindowWidth(window.innerWidth)
+        }
+        
+        window.addEventListener("resize", watchWidth)
+        
+        return function() {
+            console.log("Cleaning up...")
+            window.removeEventListener("resize", watchWidth)
+        }
+    }, [])
+    
+    return (
+        <h1>Window width: {windowWidth}</h1>
+    )
+}

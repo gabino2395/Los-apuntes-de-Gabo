@@ -1,0 +1,8 @@
+En esencia, useRef es como una “caja” que puedes mantener en una variable mutable en su propiedad .current
+Ten en cuenta que useRef no notifica cuando su contenido cambia. Mutar la propiedad .current no causa otro renderizado. Si quieres correr algún código cuando React agregue o quite una referencia de un nodo del DOM, puede que quieras utilizar en su lugar una referencia mediante callback.
+-nos permite mantener cualquier valor mutable (como una variable de instancia en una clase) a lo largo de los siguientes render, sea un elemento del DOM o no. Es decir, la variable declarada con useRef, a diferencia de una variable simple, guardará el valor que tenía en el anterior render hasta que le pidamos actualizarse accediendo a .current.
+-En cierto punto es similiar a useState pero este no le avisa a react y hace que no genere un render nuevo por cada mutacion, como si lo hace useState.
+
+CONCLUSION:
+
+El hook useRef en React permite la manipulación directa de elementos del DOM sin usar el virtual DOM de React. Se usa para crear una "referencia" a un elemento del DOM[3] y se actualiza con el mismo valor que el estado actual para evitar re-renderizaciones innecesarias.

@@ -1,0 +1,28 @@
+HOOKS:
+Los hooks son funciones que te permiten "enganchar" el estado de react y el ciclo de vida desde componentes funcionales.
+-Los hooks solo se puede llamar a nivel superior.
+-No se puede utilzar en ciclos ,condicionales, funciones anidadas.
+-Se llaman solo en funciones de react
+
+-Los hooks mas conocios son :
+1- useState: permite agregar un estado a un componente funcional.
+
+2- useEffect: permite agregar efectos secundarios a un componente funcional, como actualizar el DOM o realizar solicitudes HTTP.
+
+3- useContext: permite acceder al contexto en un componente funcional.
+
+4- useReducer: permite manejar el estado de un componente de manera similar a useState, pero con una funcionalidad más avanzada.
+
+5- useCallback: permite memoizar una función en un componente funcional para evitar su recreación innecesaria.
+
+6- useMemo: permite memoizar un valor en un componente funcional para evitar su recreación innecesaria.
+
+7- useRef: permite acceder a un objeto de referencia que persiste a lo largo del tiempo de vida del componente.
+
+8- useImperativeHandle: permite personalizar la forma en que un componente funcional se comporta cuando se usa con una técnica de enfoque imperativo.
+
+9 - useMutationEffect: permite agregar efectos secundarios que se ejecutan después de que se han actualizado todos los componentes hijos.
+
+10- useLayoutEffect: permite agregar efectos secundarios que se ejecutan de manera sincrónica después de que se ha actualizado el layout y antes de que se pinte.
+
+11- useDebugValue: permite especificar una representación personalizada para un valor en la herramienta de depuración React DevTools.

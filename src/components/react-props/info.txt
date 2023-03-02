@@ -1,0 +1,46 @@
+React utiliza una forma de trabajar bazada en componentes.
+-utiliza lenguaje JSX, teniendo en una misma funcion sintaxis de js y retornando un especie de html que luego si se renderiza en el html global.
+-Un ejemplo:
+
+
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import './App.css'
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <div className="App">
+     <h3>Los apuntes de Gabo</h3>
+     <p>React js</p>
+    </div>
+  )
+}
+
+export default App
+
+
+
+-Existen los llamados "props" que serian como parametros que se pueden pasar de un componente padre a hijo.
+
+Aqui un ejemplo:
+
+
+import React from 'react'
+// componente padre le pasa las props en los atributos del tag con sus valores
+const React_props = () => {
+  
+  return (
+    <div><ChildComponent
+     saludar="hola " nombre="pedro"/></div>
+
+  )
+}
+// componente hijo recibe mediante props y utiliza libremente esos valores
+function ChildComponent(props){
+  return(
+    <h2>{props.saludar} a {props.nombre}</h2>
+  )
+}
+export default React_props

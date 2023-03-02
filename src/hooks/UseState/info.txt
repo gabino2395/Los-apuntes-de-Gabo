@@ -1,0 +1,34 @@
+USESTATE:
+El hook useState permite agregar un estado a un componente funcional
+
+ejemplo:
+const[state,setState]=useState(initialState)
+
+En el primer renderizado se retorna state con su initialState, luego con el setState lo usamos para actualizarlo  y que tome un nuevo valor.
+
+Por ultimo se vuelve a renderizar state con su nuevo valor
+
+Aqui un ejemplo detallado:
+
+import React, { useState } from "react";
+
+const UseState = () => {
+  //inicializamos el estado , su initialstate es false
+  const [state, setState] = useState(false);
+
+  //hacemos una funcion toggle que revierta el estado del componente
+  const toggle = () => {
+    setState(!state);
+  };
+  return (
+    <div>
+      <p>como</p>
+      <button onClick={toggle}>
+        {/* hacemos un condicional para que al hacer click se revierta el estado */}
+        {state ? "primer estado" : "segundo estado"}{" "}
+      </button>
+    </div>
+  );
+};
+
+export default UseState;
