@@ -7,6 +7,8 @@ import SelectsAnidados from "./selectAnidados/SelectsAnidados";
 import ContactForm from "./components/formularios/forms_mircha/ContactForm";
 import Modal from "./components/Portals/Modal";
 import Modals from "./components/Portals/Modals";
+import AppRouting from "./components/Routing/AppRouting";
+import CrudRouting from "./CrudRouting/CrudRouting";
 function App() {
   return (
     <div className="App">
@@ -17,7 +19,9 @@ function App() {
       {/* <SongSearch/> */}
       {/* <SelectsAnidados/> */}
       {/* <ContactForm/> */}
-      <Modals/>
+      {/* <Modals/> */}
+      {/* <AppRouting/> */}
+      <CrudRouting/>
       {/* <Custom/> */}
     </div>
   );

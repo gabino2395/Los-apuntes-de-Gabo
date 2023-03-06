@@ -1,0 +1,18 @@
+a {
+  margin: 5px;
+  color: wheat;
+}
+ol{
+  
+  
+}
+li{
+  padding: 8px;
+  border: solid;
+  border-radius: 8px;
+  margin: 10px;
+}
+.active{
+  color: rgb(141, 141, 151);
+  border-bottom: solid;
+}
